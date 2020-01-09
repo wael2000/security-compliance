@@ -5,31 +5,29 @@ package com.security.security_compliance;
  */
 
 @javax.persistence.Entity
+@javax.persistence.Table(name = "obj_compliance_service")
 public class ComplianceService implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    @javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.AUTO, generator = "COMPLIANCESERVICE_ID_GENERATOR")
-    @javax.persistence.Id
-    @javax.persistence.SequenceGenerator(sequenceName = "COMPLIANCESERVICE_ID_SEQ", name = "COMPLIANCESERVICE_ID_GENERATOR")
-    private java.lang.Long id;
+	@javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.AUTO, generator = "COMPLIANCESERVICE_ID_GENERATOR")
+	@javax.persistence.Id
+	@javax.persistence.SequenceGenerator(sequenceName = "COMPLIANCESERVICE_ID_SEQ", name = "COMPLIANCESERVICE_ID_GENERATOR")
+	private java.lang.Long id;
 
-    public ComplianceService() {
-    }
-    
-    public ComplianceService(java.lang.Long id) {
-        this.id = id;
-    }
+	public ComplianceService() {
+	}
 
-    public java.lang.Long getId() {
-        return this.id;
-    }
-    
-    public void setId(java.lang.Long id) {
-        this.id = id;
-    }
+	public java.lang.Long getId() {
+		return this.id;
+	}
 
+	public void setId(java.lang.Long id) {
+		this.id = id;
+	}
 
-
+	public ComplianceService(java.lang.Long id) {
+		this.id = id;
+	}
 
 }
