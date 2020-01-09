@@ -75,11 +75,19 @@ public class ComplianceService implements java.io.Serializable {
 	    return true;
 	}
 	
-		public boolean hasAutomatedTask(){
-	    for(ComplianceItem item : checkList){
-	        if( item.isAutomated())
-	            return true;
-	    }
-	    return false;
+	public boolean hasAutomatedTask(){
+    for(ComplianceItem item : checkList){
+        if( item.isAutomated())
+            return true;
+    }
+    return false;
 	}
+	
+	public void isAutomatedCompleted(){
+        for(ComplianceItem item : checkList){
+            if( item.isAutomated())
+               item.setStatus("Completed");
+        }
+	}
+	
 }
