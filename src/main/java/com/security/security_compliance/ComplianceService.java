@@ -69,7 +69,7 @@ public class ComplianceService implements java.io.Serializable {
 	
 	public boolean isAutomatedCompleted(){
 	    for(ComplianceItem item : checkList){
-	        if( item.getAutomated() && !"Completed".equals(item.getStatus()))
+	        if( item.isAutomated() && !"Completed".equals(item.getStatus()))
 	            return false;
 	    }
 	    return true;
@@ -77,7 +77,7 @@ public class ComplianceService implements java.io.Serializable {
 	
 		public boolean hasAutomatedTask(){
 	    for(ComplianceItem item : checkList){
-	        if( item.getAutomated())
+	        if( item.isAutomated())
 	            return true;
 	    }
 	    return false;
