@@ -5,31 +5,104 @@ package com.security.security_compliance;
  */
 
 @javax.persistence.Entity
+@javax.persistence.Table(name = "obj_compliance_item")
 public class ComplianceItem implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    @javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.AUTO, generator = "COMPLIANCEITEM_ID_GENERATOR")
-    @javax.persistence.Id
-    @javax.persistence.SequenceGenerator(sequenceName = "COMPLIANCEITEM_ID_SEQ", name = "COMPLIANCEITEM_ID_GENERATOR")
-    private java.lang.Long id;
+	@javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.AUTO, generator = "COMPLIANCEITEM_ID_GENERATOR")
+	@javax.persistence.Id
+	@javax.persistence.SequenceGenerator(sequenceName = "COMPLIANCEITEM_ID_SEQ", name = "COMPLIANCEITEM_ID_GENERATOR")
+	private java.lang.Long id;
 
-    public ComplianceItem() {
-    }
-    
-    public ComplianceItem(java.lang.Long id) {
-        this.id = id;
-    }
+	@org.kie.api.definition.type.Label(value = "Name")
+	private java.lang.String name;
 
-    public java.lang.Long getId() {
-        return this.id;
-    }
-    
-    public void setId(java.lang.Long id) {
-        this.id = id;
-    }
+	@org.kie.api.definition.type.Label(value = "Automated?")
+	private boolean automated;
 
+	@org.kie.api.definition.type.Label(value = "Automation Engine")
+	private java.lang.String automationEngine;
 
+	@org.kie.api.definition.type.Label(value = "Automation Tak")
+	private java.lang.String automationTask;
 
+	@org.kie.api.definition.type.Label(value = "Status")
+	private java.lang.String status;
+
+	@org.kie.api.definition.type.Label(value = "Automation Task Result")
+	private java.lang.String taskResult;
+
+	public ComplianceItem() {
+	}
+
+	public java.lang.Long getId() {
+		return this.id;
+	}
+
+	public void setId(java.lang.Long id) {
+		this.id = id;
+	}
+
+	public java.lang.String getName() {
+		return this.name;
+	}
+
+	public void setName(java.lang.String name) {
+		this.name = name;
+	}
+
+	public boolean isAutomated() {
+		return this.automated;
+	}
+
+	public void setAutomated(boolean automated) {
+		this.automated = automated;
+	}
+
+	public java.lang.String getAutomationEngine() {
+		return this.automationEngine;
+	}
+
+	public void setAutomationEngine(java.lang.String automationEngine) {
+		this.automationEngine = automationEngine;
+	}
+
+	public java.lang.String getAutomationTask() {
+		return this.automationTask;
+	}
+
+	public void setAutomationTask(java.lang.String automationTask) {
+		this.automationTask = automationTask;
+	}
+
+	public java.lang.String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(java.lang.String status) {
+		this.status = status;
+	}
+
+	public java.lang.String getTaskResult() {
+		return this.taskResult;
+	}
+
+	public void setTaskResult(java.lang.String taskResult) {
+		this.taskResult = taskResult;
+	}
+
+	public ComplianceItem(java.lang.Long id, java.lang.String name,
+			boolean automated, java.lang.String automationEngine,
+			java.lang.String automationTask, java.lang.String status,
+			java.lang.String taskResult) {
+		this.id = id;
+		this.name = name;
+		this.automated = automated;
+		this.automationEngine = automationEngine;
+		this.automationTask = automationTask;
+		this.status = status;
+		this.taskResult = taskResult;
+	}
 
 }
