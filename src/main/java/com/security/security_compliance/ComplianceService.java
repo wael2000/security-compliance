@@ -83,7 +83,7 @@ public class ComplianceService implements java.io.Serializable {
     return false;
 	}
 	
-	public void isAutomatedCompleted(){
+	public void markAllAutomatedTaksCompleted(){
         for(ComplianceItem item : checkList){
             if( item.isAutomated())
                item.setStatus("Completed");
